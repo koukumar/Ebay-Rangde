@@ -41,8 +41,13 @@ public class SearchResource {
 	public List<Patient> findPatients(Search search) {
 		List<Patient> patients = new ArrayList<Patient>();
 		
-		System.out.println("Search name received: " + search.getName());
-		System.out.println("Search location received: " + search.getLocation());
+		System.out.println("Search name received: " + search.getFundingStatus());
+		System.out.println("Search location received: " + search.getLanguage());
+		System.out.println("Search name received: " + search.getLocation());
+		System.out.println("Search location received: " + search.getPercentFunded());
+		System.out.println("Search name received: " + search.getTimeLeft());
+		System.out.println("Search location received: " + search.getVolunteer());
+		System.out.println("Search name received: " + search.getCategories());
 		
 		return patients;
 	}

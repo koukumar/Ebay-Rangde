@@ -113,7 +113,7 @@
         <property name="organization" column="organization"/>
         <property name="occupation" column="occupation"/>
         <property name="nick_name" column="nick_name"/>
-        <property name="has_invested" column="has_invested/">
+        <property name="has_invested" column="has_invested"/>
     </class>
     
 	  <class name="com.rangde.domain.Payments" table="rdl_payments">
