@@ -96,13 +96,13 @@
         <property name="photo_ids" column="photo_ids"/>
         <property name="date_of_birth" column="date_of_birth"/>
         <property name="gender" column="gender"/>
-        <property name="home_location" column="home_location">
-		<property name="mother_tongue" column="mother_tongue">
-		<property name="current_location" column="current_location">
-		<property name="type_of_surgery" column="type_of_surgery">
-		<property name="annual_family_income" column="annual_family_income">
-		<property name="patient_profile_story" column="patient_profile_story">
-		<property name="last_updated" column="last_updated">
+        <property name="home_location" column="home_location"/>
+		<property name="mother_tongue" column="mother_tongue"/>
+		<property name="current_location" column="current_location"/>
+		<property name="type_of_surgery" column="type_of_surgery"/>
+		<property name="annual_family_income" column="annual_family_income"/>
+		<property name="patient_profile_story" column="patient_profile_story"/>
+		<property name="last_updated" column="last_updated"/>
 	</class>
 		<class name="com.rangde.domain.Investors" table="investors">
     	<cache usage="read-write"/>
