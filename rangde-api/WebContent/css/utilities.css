@@ -65,3 +65,40 @@ outline:none;
 font-size: 11pt;
 margin: 0px 0px 8px 0px;
 }
+/*** Dot BreadCrumb **/
+.dotBreadcrumb{
+border: 2px solid #E8EAEC;
+border-radius: 27px;
+-moz-border-radius: 27px;
+-webkit-border-radius: 27px;
+background: #FAFAFB;
+position: relative;
+height: 13px;
+margin-bottom:40px;
+position:relative;
+}
+.dotBreadcrumb .circleDot{
+border-radius: 25px;
+box-shadow: 0 0px 0px rgba(26, 53, 71, 0.21), 0 0 0 3px rgba(26, 53, 71, 0.17);
+-webkit-box-shadow: 0 0px 0px rgba(26, 53, 71, 0.21), 0 0 0 3px rgba(26, 53, 71, 0.17);
+-moz-box-shadow: 0 0px 0px rgba(26, 53, 71, 0.21), 0 0 0 3px rgba(26, 53, 71, 0.17);
+background: #eee;
+position: relative;
+z-index: 3;
+width: 20px;
+height: 20px;
+text-align: center;
+display: block;
+margin: -5px auto 0px auto;
+cursor:pointer;
+}
+.dotBreadcrumb label{margin-top:10px;font-weight: 300;}
+.dotBreadcrumb .selection{position:relative;margin-left:0px;}
+.dotBreadcrumb .selection.prograssBarFull label{color:#52D468;}
+.dotBreadcrumb .selection.prograssBarFull .dot.circleDot{background: #52D468;box-shadow: none;color:#fff;}
+.dotBreadcrumb .selection.prograssBarFull .prograssBar{width: 100%;}
+.dotBreadcrumb .selection.prograssBarOff .prograssBar{width: 100%;}
+.dotBreadcrumb .selection.prograssBarOff label{color:#048ccc;}
+.dotBreadcrumb .selection.prograssBarOff .dot.circleDot{background: #048ccc;box-shadow: none;color:#fff;}
+.dotBreadcrumb .selection.prograssBarFull .dot.circleDot .fa.fa-check{font-size: 10pt;margin: 0px 0px 0px 0px;display: block;line-height: 22px;}
+.dotBreadcrumb .prograssBar{display: block;background: #eee;height: 9px;position: absolute;top: 0px;}

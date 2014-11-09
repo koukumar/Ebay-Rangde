@@ -63,3 +63,29 @@ i.fa.fa-search {
     right: 25%;
     font-size: 17pt;
 }
+.specialSec{border-bottom: 1px solid #eee;
+padding: 0px 0px 8px 0px;}
+.donationUpdateSec{border-top: 2px solid #eee;padding: 20px 0px;}
+.donationUpdateSec .amountDonated{font-size: 18pt;
+font-weight: bold;
+color: #629C44;}
+.donationUpdateSec .donatedPersonName{font-size: 12pt;
+font-weight: 300;color: #777;margin: 0px 0px 8px 0px;}
+.donationUpdateSec .donatedTime{font-size: 9pt;
+color: #999;}
+.donationUpdateSec .donorComments{color: #777;
+font-size: 12pt;
+padding: 20px 0px 0px 0px;}
+.post_author_img{height:80px;}
+.post_author_name{ont-size: 18pt;
+font-weight: bold;
+color: #666;}
+.post_author_type{font-size: 12pt;
+font-weight: 300;color: #777;margin: 0px 0px 8px 0px;}
+.post_text{color: #777;
+font-size: 12pt;
+padding:0px 0px 0px 0px;margin:23px 0px 13px 0px;}
+.post_time{font-size: 9pt;
+color: #999;}
+.post_img{width:90%;}
+
