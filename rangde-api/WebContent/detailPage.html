@@ -231,11 +231,11 @@ color: #777;
                 <ul class="gridWrapper highlightBoxWhite pull-down-20">
                     <li class="grid6">
                         <ul>
-                            <li><span class="facebookLikesCount">543</span>
-                            </li>
-                            <li>
-                                <button class="facebookShareButton"><i class="fa fa-facebook"></i> Share</button>
-                                <button id="fBshare" class="hide"></button>
+                            <li><span class="facebookLikesCount" > </span>
+                            <p id="fbLikesCount">
+                            </li>                            
+                            <li id= fbshare>                                
+                                <button id="fBshare"></button>
                             </li>
                         </ul>
                     </li>
@@ -338,32 +338,34 @@ color: #777;
   </script>
   
    <script> 
- 
-                                
-                                
-                                
-                                
-                                
            var input = document.createElement("div");
 
   	    input.setAttribute("class", "fb-share-button");
 
-  	    input.setAttribute("data-href", "http://www.rangde.org/");//document.URL
-  	    
+  	    //input.setAttribute("data-href", "http://www.rangde.org/");//for demo
+  	   
+  	    input.setAttribute("data-href", document.URL)//For prod
 
   	    input.setAttribute("data-layout", "icon_link");
-
   	    //append to form element that you want .
   	    document.getElementById("fBshare").appendChild(input);                     
-                                
-                                
-                                
-                                
-                                
-                                
   	  </script>                
                                 
-                                
+                 <script>
+                 
+                 var likes=document.createElement("h4")
+                  var xmlHttp = null;
+
+   						 xmlHttp = new XMLHttpRequest();
+  				 		 xmlHttp.open( "GET", "http://graph.facebook.com/rangdeorg?fields=likes", false );
+   						 xmlHttp.send( null );
+   						 console.log("likes  "+xmlHttp.responseText);
+   						 var obj = JSON.parse(xmlHttp.responseText);
+   					 //alert(obj.likes);
+   					 likes.setAttribute("value",obj.likes)
+                	 document.getElementById("fbLikesCount").innerHTML =+obj.likes;
+                 
+                 </script>               
                                 
                                 
                                 
