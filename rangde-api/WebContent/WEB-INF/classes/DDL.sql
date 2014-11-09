@@ -97,8 +97,6 @@ CREATE TABLE rdl_payments (
  is_80G_sent VARCHAR(1) NULL ,
  PRIMARY KEY (id) )
 
-
-
 CREATE TABLE investors (
  id int(4) unsigned NOT NULL AUTO_INCREMENT,
  image_id int(4) DEFAULT NULL,
