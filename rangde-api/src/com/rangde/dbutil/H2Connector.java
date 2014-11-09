@@ -123,5 +123,39 @@ public class H2Connector {
 		} catch(Exception e){e.printStackTrace();}
 		closeConnection();
 	}
+	
+	public static void seedH2() {
+		List<String> sqls = new ArrayList<String>();
+		String sql = "";
+		try {
+	        BufferedReader reader = new BufferedReader(new InputStreamReader(H2Connector.class.getClassLoader().getResourceAsStream("DDL.sql")));
+	        String line;
+	        while ((line = reader.readLine()) != null) {
+	        	//System.out.println(line);
+	        	if (line.equals("") && !sql.equals("")) {
+	        		sqls.add(sql);
+	        		sql = "";
+	        	} else {
+	        		sql = sql + line;
+	        	}
+	        }
+	        if (!sql.equals(""))
+	        	sqls.add(sql);
+	        
+	    } catch (FileNotFoundException e) {
+	        e.printStackTrace();
+	    } catch (IOException e) {
+	        e.printStackTrace();
+	    }
+		
+		for(String s: sqls){
+			getConnection();
+			try {
+				Statement statement = connection.createStatement();
+				statement.execute(s);
+			} catch(Exception e){e.printStackTrace();}
+			closeConnection();
+		}
+	}
 
 }
