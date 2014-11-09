@@ -114,3 +114,11 @@ CREATE TABLE investors (
  video_url varchar (400) DEFAULT NULL ,
  update_time TIMESTAMP NULL
  )
+ 
+CREATE TABLE comments_patient (
+seq_id INT(5) NOT NULL,
+time_comment TIMESTAMP NOT NULL,
+comment varchar(1000) DEFAULT NULL,
+sType varchar(1),
+sId varchar(30) DEFAULT NULL,
+patientId INT(20) DEFAULT NULL)
