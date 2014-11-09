@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.ws.rs.Consumes;
-import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
@@ -23,39 +22,15 @@ public class SearchResource {
 	UriInfo uriInfo;
 	@Context
 	Request request;
-
-	@GET
-	@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
-	public List<Patient> search() {
-		List<Patient> patients = new ArrayList<Patient>();
-		Patient patient1 = new Patient();
-		patient1.setImageSrc("http://www.rangde.org/images/landingPage/madness_pro_img7.jpg");
-		patient1.setAmountRaised(10000);
-		patient1.setAmountNeeded(20000);
-		patient1.setAmountRemaining(1000);
-		patient1.setPercentageRaised(25);
-		patient1.setTimeLeft("3 days");
-		patient1.setPatientName("Kidney Transplant for Mohan");
-		Patient patient2 = new Patient();
-		patient1.setImageSrc("http://www.rangde.org/images/landingPage/madness_pro_img7.jpg");
-		patient1.setAmountRaised(10000);
-		patient1.setAmountNeeded(20000);
-		patient1.setAmountRemaining(1000);
-		patient1.setPercentageRaised(25);
-		patient1.setTimeLeft("3 days");
-		patient1.setPatientName("Kidney Transplant for Kumar");
-		patients.add(patient1);
-		patients.add(patient2);
-		return patients;
-	}
+	
+	static List<Patient> patients = new ArrayList<Patient>();
 	
 	@POST
 	@Consumes({ MediaType.APPLICATION_JSON })
 	@Produces({ MediaType.APPLICATION_JSON })
 	public List<Patient> findPatients(Search search) {
-		List<Patient> patients = new ArrayList<Patient>();
 		Patient patient1 = null;
-		for(int i = 0; i< 15; i++){
+		for(int i = 1; i< 15; i++){
 			patient1 = new Patient();
 			patient1.setImageSrc("http://www.rangde.org/images/landingPage/madness_pro_img7.jpg");
 			patient1.setAmountRaised(10000);
@@ -63,9 +38,11 @@ public class SearchResource {
 			patient1.setAmountRemaining(1000);
 			patient1.setPercentageRaised(25);
 			patient1.setTimeLeft("3 days");
-			patient1.setPatientName("Mohan");
+			patient1.setPatientName("Mohan Kumar");
 			patient1.setId(i);
 			patient1.setCaseTitle("Kidney Transplant for Mohan");
+			patient1.setFbShares(253);
+			patient1.setTweets(123);
 			patients.add(patient1);
 		}
 		return patients;

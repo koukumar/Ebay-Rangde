@@ -32,35 +32,122 @@
     <link rel="stylesheet" href="css/font-awesome.css" />
     <link rel="stylesheet" href="css/postUpdate.css" />
         <title>Post Update</title>
+<script type="text/javascript" charset="utf-8">
+
+   var pictureSource;   // picture source
+    var destinationType; // sets the format of returned value
+
+    // Wait for device API libraries to load
+    //
+    document.addEventListener("deviceready",onDeviceReady,false);
+
+    // device APIs are available
+    //
+    function onDeviceReady() {
+        pictureSource = navigator.camera.PictureSourceType;
+        destinationType = navigator.camera.DestinationType;
+    }
+
+    // Called when a photo is successfully retrieved
+    //
+    function onPhotoURISuccess(imageURI) {
+
+        // Show the selected image
+        var smallImage = document.getElementById('image');
+        smallImage.style.display = 'block';
+        smallImage.src = imageURI;
+    }
+
+
+    // A button will call this function
+    //
+    function getPhoto(source) {
+      // Retrieve image file location from specified source
+      navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50,
+        destinationType: destinationType.FILE_URI,
+        sourceType: source });
+    }
+
+   function uploadPhoto() {
+
+	conosole.log("test");
+	alert("Submitted");
+
+        //selected photo URI is in the src attribute (we set this on getPhoto)
+        var imageURI = document.getElementById("image");
+	var imageURIValue = imageURI.getAttribute("files");
+        if (!imageURI) {
+            alert('Please select an image first.');
+            return;
+        }
+
+        //set upload options
+        var options = new FileUploadOptions();
+        options.fileKey = "file";
+        options.fileName = imageURIValue.substr(imageURI.lastIndexOf('/')+1);
+        options.mimeType = "image/jpeg";
+
+        options.params = {
+	    comment: document.getElementById("comment").value
+	    name: document.getElementById("name").value
+        }
+
+	console.log(options.params.comment);
+
+        var ft = new FileTransfer();
+        ft.upload(imageURI, encodeURI("http://some.server.com/upload.php"), win, fail, options);
+    }
+
+    // Called if something bad happens.
+    
+    function onFail(message) {
+      console.log('Failed because: ' + message);
+    }
+
+    function win(r) {
+        console.log("Code = " + r.responseCode);
+        console.log("Response = " + r.response);
+        //alert("Response =" + r.response);
+        console.log("Sent = " + r.bytesSent);
+    }
+
+    function fail(error) {
+        alert("An error has occurred: Code = " + error.code);
+        console.log("upload error source " + error.source);
+        console.log("upload error target " + error.target);
+    }
+</script>
+
     </head>
     <body class="greyBackground">
 	<div class="gridWrapper">
 		<div class="pageW-600">
 		<div class="gridWrapper">
                 <ul class="postUpdateWrapper highlightBoxWhite pull-down-30">
-                        <li>
-                                <p class="labelTxt">Select Image: </p>
-                                <input type="file" />
-                        </li>
-                        <li class="pull-down-20">
-                                <p class="labelTxt">Select video <span class="helpText">(optional)</span>: </p>
-                                <input type="file" />
-                        </li>
-                        <li class="pull-down-20">
-                                <p class="labelTxt">Post Text: </p>
-                                <textarea style="width:100%;height:100px;"></textarea>
-                        </li>
-                        <li class="pull-down-30 txt-center">
-                                <input type="submit" value="PostUpdate" class="submitBtn"/>
-                        </li>
+			<li>
+				<p class="labelTxt">Patient Name: </p>
+				<input id="name" type="text"/>
+			</li>
+			<li>
+				<p class="labelTxt">Select Image: </p>
+				<input id="image" type="file" accept="image/*" />
+			</li>
+			<li class="pull-down-20">
+				<p class="labelTxt">Select video <span class="helpText">(optional)</span>: </p>
+				<input id="video" type="file" accept="videos/*"/>
+			</li>
+			<li class="pull-down-20">
+				<p class="labelTxt">Post Text: </p>
+				<textarea id="comment" style="width:100%;height:100px;"></textarea>
+			</li>
+			<li class="pull-down-30 txt-center">
+			<button onclick="uploadPhoto();" class="submitBtn">Submit</button>
+			</li>
                 </ul>
         </div>
 </div>
 </div>
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
-        <script type="text/javascript">
-            app.initialize();
-        </script>
     </body>
 </html>
