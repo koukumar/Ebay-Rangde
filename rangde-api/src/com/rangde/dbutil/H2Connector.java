@@ -99,8 +99,10 @@ public class H2Connector {
 	        e.printStackTrace();
 	    }
 		
-		for(String s: sqls)
+		for(String s: sqls){
+			System.out.println("Processing sql: " + s);
 			createTable(s);
+		}
 	}
 
 	private static void createTable(String s) {

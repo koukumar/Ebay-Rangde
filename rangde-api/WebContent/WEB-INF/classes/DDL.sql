@@ -106,15 +106,15 @@ CREATE TABLE investors (
  has_invested tinyint(1) NOT NULL DEFAULT '0',
  PRIMARY KEY (id))
 
- CREATE TABLE patient_updates (
+CREATE TABLE patient_updates (
  case_id INT NOT NULL ,
  user_id INT NOT NULL ,
  comment varchar(400) DEFAULT NULL ,
  image_url varchar (400) DEFAULT NULL ,
  video_url varchar (400) DEFAULT NULL ,
  update_time TIMESTAMP NULL
- )
- 
+)
+
 CREATE TABLE comments_patient (
 seq_id INT(5) NOT NULL,
 time_comment TIMESTAMP NOT NULL,
