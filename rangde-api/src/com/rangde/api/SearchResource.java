@@ -65,8 +65,8 @@ public class SearchResource {
 	        String line;
 	        while ((line = reader.readLine()) != null) {
 	        	String[] parts = line.split(",");
-	        	entries.put(parts[0], parts[1]);
-	        	captions.put(parts[0], parts[2]);
+	        	entries.put(parts[0], parts[2]);
+	        	captions.put(parts[0], parts[1]);
 	        }
 	    } catch (FileNotFoundException e) {
 	        e.printStackTrace();
