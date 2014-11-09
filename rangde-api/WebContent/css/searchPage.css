@@ -12,11 +12,8 @@ img.patientImg {
     width: 100%;
 }
 p.progressBar {
-    height: 15px;
-    background: #eee;
-    -webkit-border-radius: 25px;
-    -moz-border-radius: 25px;
-    border-radius: 25px;
+    height: 10px;
+    background: #eee;    
     position: relative;
 }
 p.progressBar .raisedBar {
@@ -25,10 +22,7 @@ p.progressBar .raisedBar {
     bottom: 0px;
     left: 0px;
     background: #50AD06;
-    width: 60%;
-    -webkit-border-radius: 25px;
-    -moz-border-radius: 25px;
-    border-radius: 25px;
+    width: 60%;    
 }
 ul.filterTap {
     margin: 0px 0px 30px 0px;
@@ -44,11 +38,14 @@ ul.filterTap > li {
     float: left;
     border: 1px solid #ddd;
     border-left: 0px;
+    text-align:center;
+    background: #fff;
 }
 ul.filterTap > li.active {
     background: #eee;
-    color: #ddd;
+    color: #777;
     border-left: 1px solid #ddd;
+    position: relative;
 }
 input#autoSearch {
     border: 2px solid #eee;
@@ -79,7 +76,7 @@ padding: 20px 0px 0px 0px;}
 .post_author_img{height:80px;}
 .post_author_name{ont-size: 18pt;
 font-weight: bold;
-color: #666;}
+color: #777;}
 .post_author_type{font-size: 12pt;
 font-weight: 300;color: #777;margin: 0px 0px 8px 0px;}
 .post_text{color: #777;
