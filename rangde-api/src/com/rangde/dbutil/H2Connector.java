@@ -22,7 +22,7 @@ public class H2Connector {
 			try{
 				Class.forName("org.h2.Driver");
 		        connection = DriverManager.
-		            getConnection("jdbc:h2:~/test", "sa", "");
+		            getConnection("jdbc:h2:~/test2", "sa", "");
 			} catch(Exception e) {
 				e.printStackTrace();
 			}
@@ -73,6 +73,7 @@ public class H2Connector {
 	
 	public static void main(String[] args){
 		initH2();
+		seedH2();
 	}
 	
 	public static void initH2() {
@@ -130,7 +131,7 @@ public class H2Connector {
 		List<String> sqls = new ArrayList<String>();
 		String sql = "";
 		try {
-	        BufferedReader reader = new BufferedReader(new InputStreamReader(H2Connector.class.getClassLoader().getResourceAsStream("DDL.sql")));
+	        BufferedReader reader = new BufferedReader(new InputStreamReader(H2Connector.class.getClassLoader().getResourceAsStream("INSERT.sql")));
 	        String line;
 	        while ((line = reader.readLine()) != null) {
 	        	//System.out.println(line);
@@ -151,6 +152,9 @@ public class H2Connector {
 	    }
 		
 		for(String s: sqls){
+			System.out.println("Running query: " + s);
+			if (s.startsWith("#"))
+				continue;
 			getConnection();
 			try {
 				Statement statement = connection.createStatement();

@@ -99,7 +99,7 @@ CREATE TABLE rdl_payments (
 
 CREATE TABLE investors (
  id int(4) unsigned NOT NULL AUTO_INCREMENT,
- image_id int(4) DEFAULT NULL,
+ image_id VARCHAR(200) DEFAULT NULL,
  organization varchar(100) DEFAULT NULL,
  occupation varchar(200) DEFAULT NULL,
  nick_name varchar(50) DEFAULT NULL,
