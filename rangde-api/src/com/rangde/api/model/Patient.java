@@ -5,6 +5,8 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 public class Patient {
 	
+	private int id;
+	private String caseTitle;
 	private String imageSrc;
 	private float amountRaised;
 	private float amountNeeded;
@@ -14,16 +16,6 @@ public class Patient {
 	private String patientName;
 	
 	public Patient(){	
-	}
-	
-	public Patient(String imageSrc, float amountRaised, float amountNeeded, float amountRemaining, float percentageRaised, String timeLeft, String patientName){
-		this.imageSrc = imageSrc;
-		this.amountRaised = amountRaised;
-		this.amountNeeded = amountNeeded;
-		this.amountRemaining = amountRemaining;
-		this.percentageRaised = percentageRaised;
-		this.timeLeft = timeLeft;
-		this.patientName = patientName;
 	}
 	
 	public String getImageSrc() {
@@ -67,6 +59,20 @@ public class Patient {
 	}
 	public void setPatientName(String patientName) {
 		this.patientName = patientName;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getCaseTitle() {
+		return caseTitle;
+	}
+	public void setCaseTitle(String caseTitle) {
+		this.caseTitle = caseTitle;
 	}
 	
 }

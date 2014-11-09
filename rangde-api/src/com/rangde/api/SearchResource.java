@@ -63,7 +63,9 @@ public class SearchResource {
 			patient1.setAmountRemaining(1000);
 			patient1.setPercentageRaised(25);
 			patient1.setTimeLeft("3 days");
-			patient1.setPatientName("Kidney Transplant for Mohan");
+			patient1.setPatientName("Mohan");
+			patient1.setId(i);
+			patient1.setCaseTitle("Kidney Transplant for Mohan");
 			patients.add(patient1);
 		}
 		return patients;
