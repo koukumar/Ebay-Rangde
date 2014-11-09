@@ -6,10 +6,11 @@ var searchPage = {
         filters.click(function() {
             searchPage.filterCall();
         });
+        searchPage.filterCall();
     },
     filterCall: function() {
         var onFilterSuccess = function(data) {
-            var searchResults = [{
+            /*var searchResults = [{
                 'imageSrc': 'http://www.rangde.org/images/landingPage/madness_pro_img7.jpg',
                 'amountRaised': '1000',
                 'amountNeeded': '10,000',
@@ -27,9 +28,9 @@ var searchPage = {
                 'location': 'Bangalore',
                 'timeLeft': '2 Days',
                 'patientName': 'Suresh'
-            }];
+            }];*/
             $.get('js/templates/searchPageTemplate.mst', function(patientDescriptionSecTemplate) {
-            	$.each(searchResults, function(i, field) {
+                $.each(data, function(i, field) {
                     var patientDescriptionSecTemplateRendered = Mustache.render(patientDescriptionSecTemplate, {
                         imageSrc: field.imageSrc,
                         amountRaised: field.amountRaised,
@@ -43,22 +44,21 @@ var searchPage = {
                     $('.searchResultsDisplaySec').append(patientDescriptionSecTemplateRendered);
                 });
             });
-            
+
         };
-        onFilterSuccess();
-        var onFilterError = function (data) {
+        var onFilterError = function(data) {
 
         };
         var data = {
-        		'imageSrc': 'http://www.rangde.org/images/landingPage/madness_pro_img7.jpg',
-                'amountRaised': '1000',
-                'amountNeeded': '10,000',
-                'amountRemaining': '9,000',
-                'percentageRaised': '10',
-                'location': 'Bangalore',
-                'timeLeft': '2 Days',
-                'patientName': 'Suresh'
+            "categories": ["Life Threatening", "Livelihood At Risk"],
+            "volunteer": "Open",
+            "location": "Bangalore",
+            "language": "English",
+            "timeLeft": "0-5",
+            "percentFunded": "0-100",
+            "fundingStatus": "All"
         };
-        callToDB('/searchPageFilter.action', 'POST', data, onFilterSuccess, onFilterError);
+        data = JSON.stringify(data);
+        callToDB('/rangde-api/rest/search', 'POST', data, onFilterSuccess, onFilterError);
     }
 };
