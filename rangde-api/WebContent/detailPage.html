@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="css/searchPage.css">
     <link rel="stylesheet" href="css/font-awesome.css">
     <link rel="stylesheet" href="css/utilities.css">
+     <link rel="stylesheet" href="css/fb.css">
+      <link rel="stylesheet" href="css/popbox.css">
     <style type="text/css">
         ul.filterTap > li {
             display: block;
@@ -25,6 +27,31 @@
             width: 19.9569%;
         }
     </style>
+    <style type='text/css' media='screen'>
+    body {
+      text-align:center;
+      background:#f7f7f7;
+      font-family:georgia;
+      font-size:22px;
+      text-shadow:1px 1px 1px #FFF;
+      margin:200px;
+    }
+
+    a { color:#999; text-decoration:none; }
+    label { display: block; }
+    form { margin: 25px; text-align:left }
+    form input[type=text] { padding:5px; width:90%; border:solid 1px #CCC;}
+    form textarea { padding:5px; width:90%; border:solid 1px #CCC; height:100px;}
+
+    .box { width:350px; }
+
+     footer {
+       font-size:12px;
+     }
+     form a, footer a { color:#40738d; }
+  </style>
+  
+  
 </head>
 
 <body class="homePage">
@@ -136,10 +163,42 @@
                     <h2 class="dummy">6</h2>
                 </div>
                 <div class="section commentsSectionWrapper">
-                    <h2 class="commentsSectionHeader"> No Comments Yet </h2>
+                    <h3 class="commentsSectionHeader"> No Comments Yet </h3>
                     <p>Please use Facebook to leave a comment below.</p>
                     <p>
-                        <input type="button" value="Continue" />
+                      
+                        <div class="social-wrap a">
+    		<button id="facebook" onclick="Login()">Sign in with Facebook</button>
+    		
+    
+</div>
+<div id="message" style="display: none;">
+
+
+</div>
+
+<div class='popbox' id="popupId">
+    <a class='open' href='#'>
+      <img src='plus.png' style='width:14px;position:relative;'> Comment!
+    </a>
+
+    <div class='collapse'>
+      <div class='box'>
+        <div class='arrow'></div>
+        <div class='arrow-border'></div>
+
+        <form action="comments.jsp" method="post" id="form1">
+              
+          <div class="input">
+            <textarea name="cm-f-tlhll" id="area1" placeholder="Comments" name="commentArea" ></textarea>
+          </div>
+          <input type="submit" value="Comment" onclick="go()"/> <a href="#" class="close">Cancel</a>
+        </form>
+
+
+      </div>
+    </div>
+  </div>
                     </p>
                     <p> <u>Nothing</u> gets posted on your wall. Only Facebook name & photo are used.</p>
                 </div>
@@ -255,6 +314,9 @@
 <script src="js/lib/jquery.min.js"></script>
 <script src="js/searchPage.js"></script>
 <script src="js/lib/mustache.js"></script>
+<script src="js/popbox.js"></script>
+<script src="js/fbComments.js"></script>
+
 <script type="text/javascript">
     $(function() {
         $('#patient_details_tab > li').click(function() {
@@ -264,6 +326,13 @@
         });
     });
 </script>
-<input type="text"></input>
+<script type='text/javascript' charset='utf-8'>
+    $(document).ready(function(){
+    	//console.log($('#fblog').val());
+    	//alert($('#fblog').val());
+    	
+      $('.popbox').popbox();
+    });
+  </script>
 
 </html>
