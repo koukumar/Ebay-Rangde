@@ -61,7 +61,8 @@ i.fa.fa-search {
     font-size: 17pt;
 }
 .specialSec{border-bottom: 1px solid #eee;
-padding: 0px 0px 8px 0px;}
+padding: 0px 0px 8px 0px;color: #777;
+}
 .donationUpdateSec{border-top: 2px solid #eee;padding: 20px 0px;}
 .donationUpdateSec .amountDonated{font-size: 18pt;
 font-weight: bold;
@@ -88,11 +89,12 @@ color: #999;}
 h2.filtersHeading {
 font-size: 12pt;
 border-bottom: 1px solid #eee;
-margin: 20px 0px 10px 0px;
-padding: 0px 0px 3px 0px;
+margin: 20px 0px 20px 0px;
+padding: 0px 0px 8px 0px;
 width: 80%;
 font-weight: 600;
 color: #999;
+float: left;
 }
 .searchResultsDisplaySec > .grid4{margin-bottom:20px;}
 .searchResultsDisplaySec > .grid4:nth-child(3n+4){margin-left:0px;}

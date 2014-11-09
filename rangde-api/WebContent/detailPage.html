@@ -26,7 +26,19 @@
             margin-left: 0px;
             width: 19.9569%;
         }
-  </style>
+    .submitBtn, .loginBtn {
+		background: rgba(52, 204, 4, 0.69);
+	}	
+	span.amountRaised {
+font-size: 18pt;
+font-weight: bold;
+color: #333;
+}
+.amountRaisedSec {
+font-size: 12pt;
+color: #777;
+}
+    </style>
   
   
 </head>
@@ -36,7 +48,7 @@
     <div class="pageWrapper">
         <div class="gridWrapper">
         	<div class="grid4">
-        		<img src="images/RangDeLife.png" alt="" height="80px"/>
+        		<a href="/rangde-api/index.html"><img src="images/RangDeLife.png" alt="" height="80px"/></a>
         	</div>
         	<div class="grid8 pull-down-20">
         		<ul class="section headerNavLinksSec">
@@ -200,20 +212,20 @@
                             <span class="txt-left"><i class="fa fa-globe"></i> Bangalore, KA</span>  <span class="txt-right pull-right"><i class="fa fa-tag"></i> Life Threatening</span>
                         </p>
                     </li>
-                    <li class="pull-down-20">
-                        <p>Rs. <strong>100,000</strong> of 3,00,000</p>
+                    <li class="pull-down-20 secHeading amountRaisedSec">
+                        <span class="amountRaised">Rs.100,000</span> of 3,00,000
                     </li>
                     <li class="pull-down-10">
                         <p class="progressBar">
                             <span class="raisedBar" style="width:20%"></span> 
                         </p>
                     </li>
-                    <li class="helpText txt-center">Raised By 120 Angels in 1 month</li>
+                    <li class="helpText txt-center pull-down-10">Raised By 120 Angels in 1 month</li>
                     <li class="pull-down-20 txt-center">
                         <button class="submitBtn">Donate Now</button>
                     </li>
-                    <li class="pull-down-20 txt-center">
-                        <button class="submitBtn">Volunteer Time</button>
+                    <li class="pull-down-20 txt-center pull-bottom-20">
+                        <a class="" style="text-decoration:underline;">+ Volunteer Time</a>
                     </li>
                 </ul>
                 <ul class="gridWrapper highlightBoxWhite pull-down-20">
@@ -223,7 +235,7 @@
                             </li>
                             <li>
                                 <button class="facebookShareButton"><i class="fa fa-facebook"></i> Share</button>
-                                <button id="fBshare"></button>
+                                <button id="fBshare" class="hide"></button>
                             </li>
                         </ul>
                     </li>
