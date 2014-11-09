@@ -105,3 +105,12 @@ CREATE TABLE investors (
  nick_name varchar(50) DEFAULT NULL,
  has_invested tinyint(1) NOT NULL DEFAULT '0',
  PRIMARY KEY (id))
+
+ CREATE TABLE patient_updates (
+ case_id INT NOT NULL ,
+ user_id INT NOT NULL ,
+ comment varchar(400) DEFAULT NULL ,
+ image_url varchar (400) DEFAULT NULL ,
+ video_url varchar (400) DEFAULT NULL ,
+ update_time TIMESTAMP NULL
+ )
