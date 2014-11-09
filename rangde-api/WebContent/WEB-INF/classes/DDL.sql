@@ -28,13 +28,13 @@ CREATE TABLE rdl_partner_hospitals (
  location VARCHAR(200) NULL ,
  PRIMARY KEY (id))
 
-CREATE TABLE users (
+CREATE TABLE users1 (
  id int(4) unsigned NOT NULL AUTO_INCREMENT,
  version int(4) DEFAULT NULL,
  first_name varchar(100) DEFAULT NULL,
  last_name varchar(100) DEFAULT NULL,
  email_address varchar(50) NOT NULL DEFAULT '',
- password varchar(100) DEFAULT NULL,
+ password1 varchar(100) DEFAULT NULL,
  user_type enum('A','P','I','AC','CA','CI','AP') NOT NULL DEFAULT 'I',
  nationality_id int(4) unsigned NOT NULL DEFAULT '0',
  gender enum('M','F','TG') DEFAULT NULL,

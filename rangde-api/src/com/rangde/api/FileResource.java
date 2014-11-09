@@ -15,8 +15,11 @@ import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
+import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Request;
 import javax.ws.rs.core.Response;
+import javax.ws.rs.core.UriInfo;
 import javax.ws.rs.core.Response.ResponseBuilder;
 import javax.ws.rs.PathParam;
 
@@ -27,10 +30,16 @@ import com.rangde.api.model.Message;
 @Path("/file")
 public class FileResource {
 	
+	@Context
+	UriInfo uriInfo;
+	@Context
+	Request request;
+	
 	//Hack, lets keep file in memory
 	private static Integer fileCounter = 0;
 	private Map<Integer, String> fileMap = new HashMap<Integer, String>();
 	
+	/*
 	
 	@POST
 	@Path("upload")
@@ -58,6 +67,10 @@ public class FileResource {
 		return new Message(fileCounter.toString());
 	}
 	
+	*/
+	
+	/*
+	
 	@GET
 	@Path("{id}")
 	@Produces("text/plain")
@@ -67,5 +80,7 @@ public class FileResource {
 		response.header("Content-Disposition", "attachment; filename=\""+fileMap.get(id)+"\"");
 		return response.build();
 	}
+	
+	*/
 
 }
