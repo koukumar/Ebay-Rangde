@@ -265,3 +265,12 @@ left: -2px;}
 }
 
 .modernRadioButtonTickIcon .fa-check{line-height: 22px;}
+.headerNavLinksSec > li{display:inline-block;float:right;padding:8px 13px;font-size:12pt;}
+.headerNavLinksSec > li.first{padding-right:0px;}
+.headerSecWrapper {
+background: #2d3e50;
+color: #fff;
+margin: 0px 0px 30px 0px;
+padding: 8px 13px;
+}
+.headerSecWrapper a{color:#fff;}
