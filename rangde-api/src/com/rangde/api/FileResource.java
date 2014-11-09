@@ -44,14 +44,17 @@ public class FileResource {
 		String fileName = fileDisposition.getFileName();
 		System.out.println("FileName " + fileDisposition.getFileName());
 		String filePath = fileName;
-		try (OutputStream fileOutputStream = new FileOutputStream(filePath)) {
-			int read = 0;
-			final byte[] bytes = new byte[1024];
-			while ((read = fileInputStream.read(bytes)) != -1) {
-				fileOutputStream.write(bytes, 0, read);
-			}
-		}
-		fileMap.put(fileCounter, fileName);
+		try {
+			OutputStream fileOutputStream = new FileOutputStream(filePath);
+				int read = 0;
+				final byte[] bytes = new byte[1024];
+				while ((read = fileInputStream.read(bytes)) != -1) {
+					fileOutputStream.write(bytes, 0, read);
+				}
+			fileMap.put(fileCounter, fileName);
+			fileOutputStream.close();
+		} catch (Exception e) {e.printStackTrace();}
+
 		return new Message(fileCounter.toString());
 	}
 	
